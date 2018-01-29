@@ -18,7 +18,12 @@ class Point {
         }
     }
 }
+<<<<<<< HEAD
 let movePadding = 10;
+=======
+let moveFactor = 10,
+    movePadding = 10;
+>>>>>>> 9dcea2a20e449702704e9eddee8205bacb0cfbac
 class Triangle {
     constructor(A, B, C, color) {
         this.p1 = A;
@@ -135,18 +140,28 @@ function handleMouseUp(event) {
     actionRequested = Actions.drawTriangle;
 }
 
+<<<<<<< HEAD
 
 function handleMouseMove(event) {
     if (actionRequested === Actions.moveTriangle) {
         let offsetValues = new Point();
         offsetValues.set((event.pageX - initial.x), (event.pageY - initial.y));
+=======
+function handleMouseMove(event) {
+    if (actionRequested === Actions.moveTriangle) {
+        let offsetValues = new Point();
+        offsetValues.set((event.pageX - initial.x) / moveFactor, (event.pageY - initial.y) / moveFactor);
+>>>>>>> 9dcea2a20e449702704e9eddee8205bacb0cfbac
         currentTriangle.offsetPoints(offsetValues);
         if (currentTriangle.isInViewPort()) {
             console.log(offsetValues, currentTriangle);
             clearCanvasFromCode();
             render();
+<<<<<<< HEAD
             initial = new Point();
             initial.set(event.pageX, event.pageY);
+=======
+>>>>>>> 9dcea2a20e449702704e9eddee8205bacb0cfbac
         } else {
             offsetValues.x = -offsetValues.x;
             offsetValues.y = -offsetValues.y;
